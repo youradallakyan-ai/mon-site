@@ -14,44 +14,46 @@
             margin: 0;
             padding: 20px;
             font-family: 'Roboto Slab', serif;
-            background-color: #000000;
+            background-color: #000000; /* fond noir */
             color: white;
         }
 
-        /* Titre (nom et prénom) */
+        /* Titre en haut à gauche */
         header {
             font-family: 'Orbitron', sans-serif;
-            font-size: 48px; /* taille moyenne */
+            font-size: 40px; /* taille moyenne */
             font-weight: 700;
-            text-align: right; /* collé au bord droit */
-            margin-bottom: 20px;
-            margin-right: 20px;
+            text-align: left;
+            margin-left: 30px; /* éloigné du bord gauche */
+            margin-top: 20px;  /* peu rapproché du haut */
         }
 
-        /* Section principale : description + image */
+        /* Section principale : image + description */
         main {
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            gap: 40px;
+            align-items: center;
+            gap: 50px; /* espace entre description et image */
+            margin-top: 40px; /* rapproche un peu du titre */
+            flex-wrap: wrap; /* responsive */
         }
 
-        /* Description à gauche */
+        /* Description à gauche de l'image */
         .description {
             max-width: 350px;
-            font-size: 22px; /* un peu plus grande */
+            font-size: 28px; /* grande taille */
             line-height: 1.5;
+            text-align: left;
         }
 
-        /* Conteneur image et signature */
+        /* Conteneur image + signature */
         .image-container {
             position: relative;
-            display: inline-block;
         }
 
         /* Image */
         .image-container img {
-            max-width: 500px; /* taille moyenne pour détails visibles */
+            max-width: 500px; /* taille moyenne-grande */
             width: 100%;
             border-radius: 10px;
         }
@@ -61,7 +63,7 @@
             position: absolute;
             bottom: 10px;
             right: 10px;
-            font-size: 20px;
+            font-size: 22px; /* moyen, un peu plus petit que description */
             font-family: 'Roboto Slab', serif;
             color: #e0e0e0;
         }
@@ -74,12 +76,15 @@
 
     <!-- Section principale -->
     <main>
+        <!-- Description à gauche -->
         <div class="description">
-           Attention, cette personne est tres gay, elle cherche mais demande pardon apres, si vous la voyez, fuiyez !!!
+           Attention, cette personne est tres gay, elle cherche mais demande pardon apres, si vous la voyez, fuiyez
         </div>
+
+        <!-- Image et signature -->
         <div class="image-container">
-            <img src="https://i.postimg.cc/RWrr9qQR/Snapchat-2005614137.jpg" alt="Image de Youra">
-            <div class="signature">Excusez le hannnn</div>
+            <img src=https://i.postimg.cc/xXw5ZzQb/Screenshot-20250526-230704-Snapchat.jpg" alt="Image de Youra">
+            <div class="signature">Excusez le han</div>
         </div>
     </main>
 
