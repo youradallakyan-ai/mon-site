@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -16,6 +16,7 @@
             font-family: 'Roboto Slab', serif;
             background-color: #000000; /* fond noir */
             color: white;
+            height: 100vh;
         }
 
         /* Titre en haut à gauche */
@@ -28,19 +29,20 @@
             margin-top: 20px;  /* peu rapproché du haut */
         }
 
-        /* Section principale : image + description */
+        /* Section principale : description + image */
         main {
             display: flex;
-            justify-content: center;
+            justify-content: center; /* centre l’ensemble */
             align-items: center;
-            gap: 50px; /* espace entre description et image */
-            margin-top: 40px; /* rapproche un peu du titre */
-            flex-wrap: wrap; /* responsive */
+            gap: 60px; /* espace entre description et image */
+            margin-top: 30px;
+            flex-wrap: wrap;
+            height: calc(100vh - 120px); /* permet de centrer verticalement */
         }
 
-        /* Description à gauche de l'image */
+        /* Description à gauche */
         .description {
-            max-width: 350px;
+            max-width: 400px;
             font-size: 28px; /* grande taille */
             line-height: 1.5;
             text-align: left;
@@ -49,13 +51,18 @@
         /* Conteneur image + signature */
         .image-container {
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Image */
+        /* Image grande et centrée */
         .image-container img {
-            max-width: 500px; /* taille moyenne-grande */
+            max-width: 600px; /* image plus grande */
             width: 100%;
+            height: auto;
             border-radius: 10px;
+            display: block;
         }
 
         /* Signature en bas à droite de l'image */
@@ -63,9 +70,21 @@
             position: absolute;
             bottom: 10px;
             right: 10px;
-            font-size: 22px; /* moyen, un peu plus petit que description */
+            font-size: 24px; /* un peu plus petit que description */
             font-family: 'Roboto Slab', serif;
             color: #e0e0e0;
+        }
+
+        /* Responsive pour écrans plus petits */
+        @media (max-width: 900px) {
+            main {
+                flex-direction: column;
+                gap: 30px;
+                height: auto;
+            }
+            .description {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -83,7 +102,7 @@
 
         <!-- Image et signature -->
         <div class="image-container">
-            <img src=https://i.postimg.cc/xXw5ZzQb/Screenshot-20250526-230704-Snapchat.jpg" alt="Image de Youra">
+            <img src="https://i.postimg.cc/xXw5ZzQb/Screenshot-20250526-230704-Snapchat.jpg" alt="Image de Youra">
             <div class="signature">Excusez le han</div>
         </div>
     </main>
