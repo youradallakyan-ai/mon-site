@@ -37,7 +37,7 @@
             height: calc(100vh - 100px);
         }
 
-        /* Description gauche */
+        /* Description / Coordonnées à gauche */
         .description {
             max-width: 400px;
             font-size: 28px;
@@ -45,29 +45,24 @@
             text-align: left;
         }
 
-        /* Bloc coordonnées */
-        .coords {
-            margin-top: 25px;
-            font-size: 22px;
-            line-height: 1.4;
-        }
-
-        /* Image */
+        /* Conteneur image */
         .image-container {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
         }
 
+        /* Image taille adaptée */
         .image-container img {
-            max-width: 400px;
+            max-width: 300px;
             width: 100%;
             height: auto;
             border-radius: 10px;
         }
 
-        /* Signature */
+        /* Signature en bas à droite */
         .signature {
             position: fixed;
             bottom: 50px;
@@ -77,12 +72,12 @@
             color: #e0e0e0;
         }
 
-        /* Responsive */
+        /* Responsive pour écrans plus petits */
         @media (max-width: 900px) {
             .container {
                 flex-direction: column;
                 gap: 30px;
-                height: auto;
+                align-items: center;
             }
             .description {
                 text-align: center;
@@ -97,22 +92,24 @@
 
     <!-- Contenu principal -->
     <div class="container">
-        
-                <strong>Voici mes coordonnées :</strong><br><br>
-                • TikTok : <span style="color:#66aaff;">ydlkn59</span><br>
-                • Instagram : <span style="color:#ff66cc;">yura_dlkn</span><br>
-                • Snapchat : <span style="color:#ffcc33;">yura.arm</span>
-            </div>
+
+        <!-- Coordonnées -->
+        <div class="description">
+            Voici mes coordonnées : <br><br>
+            <strong>TikTok :</strong> y.dlkn59 <br>
+            <strong>Instagram :</strong> yura_dlkn <br>
+            <strong>Snapchat :</strong> yura.arm
         </div>
 
         <!-- Image -->
         <div class="image-container">
             <img src="https://i.postimg.cc/F1vc7QNZ/Screenshot-20241129-155645-Tik-Tok.jpg" alt="Image de Youra">
         </div>
+
     </div>
 
     <!-- Signature -->
-    <div class="signature">Excusez-le</div>
+    <div class="signature">Excusez le</div>
 
 </body>
 </html>
