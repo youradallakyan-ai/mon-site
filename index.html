@@ -4,68 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Titre visible sur Google -->
     <title>Youra Dallakyan - Site officiel</title>
-    
-    <!-- Description SEO pour Google -->
-    <meta name="description" content="Site officiel de Youra Dallakyan - Retrouvez ses coordonnées TikTok, Instagram et Snapchat, ainsi que ses images et créations.">
-    
+    <meta name="description" content="Site officiel de Youra Dallakyan - Coordonnées TikTok, Instagram et Snapchat.">
+
     <!-- Polices -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
 
     <style>
+
+        /* --- FOND ANIMÉ --- */
         body {
             margin: 0;
             padding: 0;
             font-family: 'Roboto Slab', serif;
-            background-color: #000000;
             color: white;
+            background: linear-gradient(120deg, #000000, #1a0033, #330066, #660099);
+            background-size: 300% 300%;
+            animation: gradientMove 10s ease infinite;
         }
 
-        /* Titre principal */
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Titre */
         header {
             font-family: 'Orbitron', sans-serif;
             font-size: 50px;
-            font-weight: 700;
             margin: 20px 0 0 30px;
         }
 
-        /* Conteneur principal */
         .container {
             display: flex;
             align-items: flex-start;
             gap: 60px;
             padding: 20px;
-            height: calc(100vh - 100px);
         }
 
-        /* Coordonnées avec couleur dégradée */
+        /* Zone description + boutons */
         .description {
             max-width: 420px;
-            font-size: 28px;
+            font-size: 26px;
             line-height: 1.5;
-            text-align: left;
         }
 
-        .description span {
+        /* --- BOUTONS DE RESEAUX --- */
+        .btn {
+            display: block;
+            width: 230px;
+            padding: 14px;
+            margin: 15px 0;
+            font-size: 22px;
             font-weight: bold;
-            background: linear-gradient(90deg, #00eaff, #7f00ff, #ff008c, #ff3300);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
         }
 
-        /* Conteneur images */
+        .btn-tiktok {
+            background: #010101;
+            border: 2px solid #ff0050;
+            box-shadow: 0 0 12px #ff0050;
+        }
+
+        .btn-tiktok:hover {
+            background: #ff0050;
+        }
+
+        .btn-insta {
+            background: #6600ff;
+            border: 2px solid #ff00cc;
+            box-shadow: 0 0 12px #ff00cc;
+        }
+
+        .btn-insta:hover {
+            background: #ff00cc;
+        }
+
+        .btn-snap {
+            background: #222;
+            border: 2px solid #f7ff00;
+            box-shadow: 0 0 12px #f7ff00;
+        }
+
+        .btn-snap:hover {
+            background: #f7ff00;
+            color: black;
+        }
+
+        /* Images */
         .images {
             display: flex;
-            flex-direction: row;
             gap: 30px;
         }
 
         .images img {
-            max-width: 400px;
-            width: 100%;
-            height: auto;
+            max-width: 350px;
             border-radius: 12px;
             border: 3px solid #7f00ff;
             box-shadow: 0 0 15px #7f00ff;
@@ -77,51 +116,36 @@
             bottom: 40px;
             right: 40px;
             font-size: 24px;
-            font-family: 'Roboto Slab', serif;
             color: #e0e0e0;
         }
 
-        /* Responsive pour petits écrans */
-        @media (max-width: 900px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-            }
-            .description {
-                text-align: center;
-            }
-            .images {
-                flex-direction: column;
-                gap: 20px;
-            }
-        }
     </style>
 </head>
 <body>
 
-    <!-- Titre principal -->
     <header>Youra Dallakyan</header>
 
-    <!-- Conteneur principal -->
     <div class="container">
 
-        <!-- Coordonnées -->
+        <!-- Coordonnées + BOUTONS -->
         <div class="description">
-            Voici mes coordonnées : <br><br>
-            <span>TikTok :</span> y.dlkn59 <br>
-            <span>Instagram :</span> yura_dlkn <br>
-            <span>Snapchat :</span> yura.arm
+            Voici mes réseaux : <br><br>
+
+            <a class="btn btn-tiktok" href="https://www.tiktok.com/@y.dlkn59" target="_blank">TikTok</a>
+
+            <a class="btn btn-insta" href="https://www.instagram.com/yura_dlkn" target="_blank">Instagram</a>
+
+            <a class="btn btn-snap" href="https://www.snapchat.com/add/yura.arm" target="_blank">Snapchat</a>
         </div>
 
-        <!-- Deux images -->
+        <!-- Images -->
         <div class="images">
-            <img src="https://i.postimg.cc/F1vc7QNZ/Screenshot-20241129-155645-Tik-Tok.jpg" alt="Image principale de Youra">
-            <img src="https://th.bing.com/th/id/OIP.AiTEMTpFgkaeskFE7kLApQHaHz?w=172&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1" alt="Deuxième image de Youra">
+            <img src="https://i.postimg.cc/F1vc7QNZ/Screenshot-20241129-155645-Tik-Tok.jpg">
+            <img src="https://th.bing.com/th/id/OIP.AiTEMTpFgkaeskFE7kLApQHaHz?w=172&h=180&c=7&r=0&o=7&cb=ucfimg2&pid=1.7&rm=3&ucfimg=1">
         </div>
 
     </div>
 
-    <!-- Signature en bas à droite -->
     <div class="signature">Excusez le</div>
 
 </body>
