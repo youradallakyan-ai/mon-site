@@ -2,148 +2,36 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Youra Dallakyan</title>
-
-<!-- Polices -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+<title>Test Image</title>
 
 <style>
 body {
-    margin: 0;
-    font-family: 'Roboto Slab', serif;
     background: black;
     color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 50px;
 }
 
-/* Fond galaxie */
-#bgCanvas {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-}
-
-/* Titre */
-header {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 48px;
-    margin: 20px 30px;
-    color: #00ffff;
-    text-shadow: 0 0 20px #00ffff, 0 0 60px #ff00ff;
-}
-
-/* Layout */
-.container {
-    display: flex;
-    gap: 50px;
-    padding: 30px;
-    align-items: center;
-}
-
-/* Texte */
-.description {
-    font-size: 26px;
-}
-
-/* Instagram */
-.socialIcon {
-    margin-top: 20px;
-    width: 90px;
-    height: 90px;
-    border-radius: 22px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.socialIcon img {
-    width: 50px;
-    z-index: 2;
-}
-
-/* Image principale */
-.images img {
-    max-width: 500px;
-    border-radius: 14px;
-    border: 2px solid #7f00ff;
-    box-shadow: 0 0 30px #7f00ff;
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
-    }
+img {
+    width: 300px;
+    border: 4px solid red;
 }
 </style>
 </head>
 
 <body>
 
-<header>Youra Dallakyan</header>
+<h1>TEST IMAGE</h1>
 
-<div class="container">
-    <div class="description">
-        Mon Instagram
-        <br><br>
-        <a href="https://instagram.com/yura_dlkn" target="_blank" class="socialIcon">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-        </a>
-    </div>
-
-    <!-- IMAGE EN LIGNE (GARANTIE) -->
-    <div class="images">
-        <img 
-          src="https://images.unsplash.com/photo-1520975922284-7b958f70765a?auto=format&fit=crop&w=600&q=80"
-          alt="Image principale">
-    </div>
-</div>
-
-<canvas id="bgCanvas"></canvas>
-
-<script>
-const canvas = document.getElementById("bgCanvas");
-const ctx = canvas.getContext("2d");
-
-function resize() {
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
-}
-resize();
-addEventListener("resize", resize);
-
-const stars = Array.from({ length: 120 }, () => ({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 2 + 1,
-    dx: (Math.random() - 0.5) * 0.4,
-    dy: (Math.random() - 0.5) * 0.4
-}));
-
-function animate() {
-    ctx.fillStyle = "#000";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    for (const s of stars) {
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-        ctx.fillStyle = "white";
-        ctx.fill();
-
-        s.x += s.dx;
-        s.y += s.dy;
-
-        if (s.x < 0 || s.x > canvas.width) s.dx *= -1;
-        if (s.y < 0 || s.y > canvas.height) s.dy *= -1;
-    }
-
-    requestAnimationFrame(animate);
-}
-animate();
-</script>
+<!-- IMAGE INTÉGRÉE DANS LE CODE (IMPOSSIBLE À CASSER) -->
+<img src="data:image/svg+xml;utf8,
+<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200'>
+<rect width='100%' height='100%' fill='purple'/>
+<text x='50%' y='50%' fill='white' font-size='24' text-anchor='middle' dominant-baseline='middle'>
+IMAGE OK
+</text>
+</svg>">
 
 </body>
 </html>
