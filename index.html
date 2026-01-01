@@ -15,7 +15,6 @@ body {
     font-family: 'Roboto Slab', serif;
     background: black;
     color: white;
-    overflow-x: hidden;
 }
 
 /* Fond galaxie */
@@ -32,12 +31,6 @@ header {
     margin: 20px 30px;
     color: #00ffff;
     text-shadow: 0 0 20px #00ffff, 0 0 60px #ff00ff;
-    animation: glow 1.5s infinite alternate;
-}
-
-@keyframes glow {
-    from { text-shadow: 0 0 20px #00ffff; }
-    to { text-shadow: 0 0 60px #ff00ff; }
 }
 
 /* Layout */
@@ -63,7 +56,6 @@ header {
     justify-content: center;
     align-items: center;
     position: relative;
-    transition: 0.4s;
 }
 
 .socialIcon img {
@@ -71,45 +63,12 @@ header {
     z-index: 2;
 }
 
-.socialIcon::before {
-    content: "";
-    position: absolute;
-    inset: -20%;
-    border-radius: 30%;
-    background: conic-gradient(
-        #ff006a,
-        #ff8b2f,
-        #ff4f91,
-        #ff006a
-    );
-    filter: blur(25px);
-    animation: rotate 4s linear infinite;
-}
-
-@keyframes rotate {
-    to { transform: rotate(360deg); }
-}
-
-.socialIcon:hover {
-    transform: scale(1.3) rotate(8deg);
-    box-shadow: 0 0 50px white;
-}
-
-/* Image */
+/* Image principale */
 .images img {
     max-width: 500px;
     border-radius: 14px;
     border: 2px solid #7f00ff;
     box-shadow: 0 0 30px #7f00ff;
-}
-
-/* Signature */
-.signature {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    opacity: 0.7;
-    font-size: 22px;
 }
 
 /* Mobile */
@@ -135,12 +94,13 @@ header {
         </a>
     </div>
 
+    <!-- IMAGE EN LIGNE (GARANTIE) -->
     <div class="images">
-        <img src="photo.webp" alt="Image principale">
+        <img 
+          src="https://images.unsplash.com/photo-1520975922284-7b958f70765a?auto=format&fit=crop&w=600&q=80"
+          alt="Image principale">
     </div>
 </div>
-
-<div class="signature">Excusez Alen le han</div>
 
 <canvas id="bgCanvas"></canvas>
 
@@ -149,11 +109,11 @@ const canvas = document.getElementById("bgCanvas");
 const ctx = canvas.getContext("2d");
 
 function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
 }
 resize();
-window.addEventListener("resize", resize);
+addEventListener("resize", resize);
 
 const stars = Array.from({ length: 120 }, () => ({
     x: Math.random() * canvas.width,
